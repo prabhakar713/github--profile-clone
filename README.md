@@ -57,3 +57,16 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Deployment (Vercel)
+
+This repository contains a Vercel configuration and a small serverless wrapper so the application can run with SSR on Vercel.
+
+To enable automatic production deployments from GitHub you need to add the following repository Secrets in GitHub (Repository → Settings → Secrets & variables → Actions):
+
+- VERCEL_TOKEN — create a personal token at https://vercel.com/account/tokens
+- VERCEL_ORG_ID — your Vercel organization ID (available in the Vercel dashboard)
+- VERCEL_PROJECT_ID — the Vercel project ID (found in project Settings → General)
+
+Once the secrets are configured, pushes to `main` will trigger the `CI / Deploy to Vercel` workflow and automatically publish a production deployment.
+
